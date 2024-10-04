@@ -3,12 +3,20 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
 from datetime import datetime
+import os
 
-#load data
-df_day_cleaned = pd.read_csv('bike_sharing_cleaned.csv')
+# Load data
+# Construct the file path
+csv_file_path = os.path.join('dashboard', 'bike_sharing_cleaned.csv')
 
+try:
+    # Load the CSV file
+    df_day_cleaned = pd.read_csv(csv_file_path)
+except FileNotFoundError:
+    st.error("The CSV file was not found. Please check the file path.")
+    st.stop()  # Stop execution if the file is not found
 
-#layout
+# Layout
 st.title("🚴‍♂️ Bike Sharing Analysis Dashboard")
 
 # Sidebar navigation
