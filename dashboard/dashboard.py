@@ -4,14 +4,14 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 from datetime import datetime
 
-#load data
-df_day_cleaned = pd.read_csv('bike_sharing_cleaned.csv')  # This works because you're in the dashboard folder
+# Load data
+df_day_cleaned = pd.read_csv('bike_sharing_cleaned.csv')
 
 
-#judul layout
+# Title layout
 st.title("🚴‍♂️ Bike Sharing Analysis Dashboard")
 
-#sidebat
+# Sidebar navigation
 st.sidebar.header("Navigation")
 st.sidebar.text("Select a section to view:")
 overview_option = st.sidebar.button("Overview")
@@ -19,16 +19,16 @@ rfm_analysis_option = st.sidebar.button("RFM Analysis")
 weather_conditions_option = st.sidebar.button("Weather Conditions Impact")
 clustering_analysis_option = st.sidebar.button("Clustering Analysis")
 
-#overview
+# Overview Section
 if overview_option:
     st.header("Overview of Bike Rentals")
     st.write("This dashboard provides insights into bike rental patterns based on weather conditions and rental timings.")
     st.write(df_day_cleaned)
 
-#RFM
+# RFM Analysis Section
 if rfm_analysis_option:
     st.header("📊 RFM Analysis")
-    st.write("RFM analysis is used to evaluate customer behavior based on three dimensions: Recency, Frequency, and Monetary value.")
+    st.write("RFM analysis evaluates customer behavior based on Recency, Frequency, and Monetary value.")
 
     # Simulated last_rental_date for demonstration purposes
     df_day_cleaned['last_rental_date'] = pd.to_datetime('2024-10-04')  # Example date for recency calculation
@@ -51,10 +51,10 @@ if rfm_analysis_option:
         plt.title("RFM Analysis: Recency vs Frequency")
         st.pyplot(fig)
 
-# Weather Conditions Impact Page
+# Weather Conditions Impact Section
 if weather_conditions_option:
     st.header("🌦️ Weather Conditions Impact on Rentals")
-    st.write("This section analyzes how various weather conditions, including temperature, humidity, and windspeed, impact bike rental demand.")
+    st.write("This section analyzes how various weather conditions impact bike rental demand.")
 
     # Plotting the impact of temperature on bike rentals
     st.subheader("Impact of Temperature on Bike Rentals")
@@ -83,10 +83,10 @@ if weather_conditions_option:
     plt.ylabel("Average Bike Rentals")
     st.pyplot(fig)
 
-# Clustering Analysis Page
+# Clustering Analysis Section
 if clustering_analysis_option:
     st.header("🔍 Clustering Analysis")
-    st.write("In this section, we will analyze bike rentals based on weather conditions by grouping the data to observe patterns.")
+    st.write("Analyzing bike rentals based on weather conditions by grouping the data to observe patterns.")
 
     # Grouping by weather conditions
     st.subheader("Bike Rentals by Weather Conditions")
@@ -100,4 +100,4 @@ if clustering_analysis_option:
     st.pyplot(fig)
 
 # Final Note
-st.write("hopeie this dashboard help.")
+st.write("tolonk jangan eror")
