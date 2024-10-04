@@ -7,14 +7,14 @@ import os
 
 # Load data
 # Construct the file path
-csv_file_path = os.path.join('dashboard', 'bike_sharing_cleaned.csv')
 
-try:
-    # Load the CSV file
-    df_day_cleaned = pd.read_csv(csv_file_path)
-except FileNotFoundError:
+current_directory = os.path.dirname(__file__)
+csv_file_path = os.path.join(current_directory, 'bike_sharing_cleaned.csv')
+
+if not os.path.exists(csv_file_path):
     st.error("The CSV file was not found. Please check the file path.")
-    st.stop()  # Stop execution if the file is not found
+else:
+    df_day_cleaned = pd.read_csv(csv_file_path)
 
 # Layout
 st.title("🚴‍♂️ Bike Sharing Analysis Dashboard")
