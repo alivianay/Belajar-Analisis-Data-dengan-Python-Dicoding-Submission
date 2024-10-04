@@ -4,11 +4,11 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 from datetime import datetime
 
-# Load data
+#load data
 df_day_cleaned = pd.read_csv('bike_sharing_cleaned.csv')
 
 
-# Title layout
+#layout
 st.title("🚴‍♂️ Bike Sharing Analysis Dashboard")
 
 # Sidebar navigation
@@ -59,7 +59,7 @@ if weather_conditions_option:
     # Plotting the impact of temperature on bike rentals
     st.subheader("Impact of Temperature on Bike Rentals")
     fig, ax = plt.subplots()
-    sns.barplot(data=df_day_cleaned, x='temp_category', y='cnt', ax=ax, palette='coolwarm')
+    sns.barplot(data=df_day_cleaned, x='temp_category', y='cnt', ax=ax, hue='temp_category', palette='coolwarm', legend=False)
     plt.title("Average Bike Rentals by Temperature Category")
     plt.xlabel("Temperature Category")
     plt.ylabel("Average Bike Rentals")
@@ -68,7 +68,7 @@ if weather_conditions_option:
     # Plotting the impact of humidity on bike rentals
     st.subheader("Impact of Humidity on Bike Rentals")
     fig, ax = plt.subplots()
-    sns.barplot(data=df_day_cleaned, x='hum_category', y='cnt', ax=ax, palette='viridis')
+    sns.barplot(data=df_day_cleaned, x='hum_category', y='cnt', ax=ax, hue='hum_category', palette='viridis', legend=False)
     plt.title("Average Bike Rentals by Humidity Category")
     plt.xlabel("Humidity Category")
     plt.ylabel("Average Bike Rentals")
@@ -77,7 +77,7 @@ if weather_conditions_option:
     # Plotting the impact of windspeed on bike rentals
     st.subheader("Impact of Windspeed on Bike Rentals")
     fig, ax = plt.subplots()
-    sns.barplot(data=df_day_cleaned, x='windspeed_category', y='cnt', ax=ax, palette='magma')
+    sns.barplot(data=df_day_cleaned, x='windspeed_category', y='cnt', ax=ax, hue='windspeed_category', palette='magma', legend=False)
     plt.title("Average Bike Rentals by Windspeed Category")
     plt.xlabel("Windspeed Category")
     plt.ylabel("Average Bike Rentals")
@@ -100,4 +100,4 @@ if clustering_analysis_option:
     st.pyplot(fig)
 
 # Final Note
-st.write("tolonk jangan eror")
+st.write("Hope this dashboard helps!")
