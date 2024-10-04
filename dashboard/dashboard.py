@@ -5,7 +5,8 @@ import seaborn as sns
 from datetime import datetime
 
 #load data
-df_day_cleaned = pd.read_csv('bike_sharing_cleaned.csv')  # Make sure this matches your dataset name
+df_day_cleaned = pd.read_csv('bike_sharing_cleaned.csv')  # This works because you're in the dashboard folder
+
 
 #judul layout
 st.title("🚴‍♂️ Bike Sharing Analysis Dashboard")
