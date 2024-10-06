@@ -1,7 +1,8 @@
 # 🚴‍♂️ Bike Sharing Analysis Dashboard
 
-## ✨ Overview
-This project provides a dashboard to analyze bike sharing data. It includes various visualizations and analyses based on weather conditions and rental patterns.
+## ✨ Setup and Installation
+All necessary dependencies are listed in the requirements.txt file. To install them, execute the following command:
+pip install -r requirements.txt
 
 ## 📋 Setup Environment - Anaconda
 To set up the environment, follow these steps:
