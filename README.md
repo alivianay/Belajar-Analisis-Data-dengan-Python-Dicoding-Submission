@@ -7,8 +7,8 @@ This project provides an interactive dashboard for analyzing bike-sharing data. 
 ## ⚙️ Features
 - Visualize bike-sharing usage patterns
 - Analyze bike rental trends over time
-- User-friendly dashboard interface built with Streamlit
-- Easy setup and deployment using `pipenv` or `conda`
+- Dashboard interface built with Streamlit
+- Setup and deployment using `pipenv` or `conda`
 
 ## 🛠️ Tools and Libraries
 The project uses the following libraries (as listed in the `requirements.txt` file):
