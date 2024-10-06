@@ -10,18 +10,6 @@ The project uses the following libraries (as listed in the `requirements.txt` fi
 - **Seaborn**
 - **Plotly**
 
-## 📂 Project Structure
-```
-📦proyek_analisis_data
- ┣ 📂data
- ┃ ┗ 📄bike_sharing_data.csv
- ┣ 📂scripts
- ┃ ┗ 📄data_preprocessing.py
- ┣ 📂dashboard
- ┃ ┗ 📄dashboard.py
- ┣ 📄requirements.txt
- ┣ 📄README.md
-```
 
 ## 🚀 Installation and Setup
 
