@@ -1,14 +1,6 @@
 
 # 🚴‍♂️ Bike Sharing Analysis Dashboard
 
-## 📄 Project Description
-This project provides an interactive dashboard for analyzing bike-sharing data. It includes visualizations and insights about bike rental patterns, usage behavior, and trends in various locations. The analysis is done using Python and popular data science libraries.
-
-## ⚙️ Features
-- Visualize bike-sharing usage patterns
-- Analyze bike rental trends over time
-- Dashboard interface built with Streamlit
-- Setup and deployment using `pipenv` or `conda`
 
 ## 🛠️ Tools and Libraries
 The project uses the following libraries (as listed in the `requirements.txt` file):
