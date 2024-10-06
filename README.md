@@ -1,14 +1,74 @@
+
 # 🚴‍♂️ Bike Sharing Analysis Dashboard
 
-## ✨ Setup and Installation
-All necessary dependencies are listed in the requirements.txt file. To install them, execute the following command:
-pip install -r requirements.txt
+## 📄 Project Description
+This project provides an interactive dashboard for analyzing bike-sharing data. It includes visualizations and insights about bike rental patterns, usage behavior, and trends in various locations. The analysis is done using Python and popular data science libraries.
 
-## 📋 Setup Environment - Anaconda
-To set up the environment, follow these steps:
-```bash
-conda create --name main-ds python=3.9
-conda activate main-ds
-pip install -r requirements.txt
+## ⚙️ Features
+- Visualize bike-sharing usage patterns
+- Analyze bike rental trends over time
+- User-friendly dashboard interface built with Streamlit
+- Easy setup and deployment using `pipenv` or `conda`
 
-## Setup Environment - Shell/Terminal
+## 🛠️ Tools and Libraries
+The project uses the following libraries (as listed in the `requirements.txt` file):
+- **Streamlit**
+- **Pandas**
+- **Matplotlib**
+- **Seaborn**
+- **Plotly**
+
+## 📂 Project Structure
+```
+📦proyek_analisis_data
+ ┣ 📂data
+ ┃ ┗ 📄bike_sharing_data.csv
+ ┣ 📂scripts
+ ┃ ┗ 📄data_preprocessing.py
+ ┣ 📂dashboard
+ ┃ ┗ 📄dashboard.py
+ ┣ 📄requirements.txt
+ ┣ 📄README.md
+```
+
+## 🚀 Installation and Setup
+
+### Option 1: Using Anaconda
+1. Clone the repository:
+    ```bash
+    git clone <repository-url>
+    ```
+2. Create a new environment and activate it:
+    ```bash
+    conda create --name bike-sharing python=3.9
+    conda activate bike-sharing
+    ```
+3. Install the required dependencies using the `requirements.txt` file:
+    ```bash
+    pip install -r requirements.txt
+    ```
+4. Run the Streamlit app:
+    ```bash
+    streamlit run dashboard/dashboard.py
+    ```
+
+### Option 2: Using Pipenv
+1. Clone the repository:
+    ```bash
+    git clone <repository-url>
+    ```
+2. Navigate to the project directory and set up the environment:
+    ```bash
+    mkdir proyek_analisis_data
+    cd proyek_analisis_data
+    pipenv install
+    pipenv shell
+    ```
+3. Install the dependencies using the `requirements.txt` file:
+    ```bash
+    pip install -r requirements.txt
+    ```
+4. Run the Streamlit app:
+    ```bash
+    streamlit run dashboard/dashboard.py
+    ```
