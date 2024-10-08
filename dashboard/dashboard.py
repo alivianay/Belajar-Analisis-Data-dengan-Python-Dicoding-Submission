@@ -143,9 +143,9 @@ if clustering_analysis_option:
     plt.title("Average Bike Rentals by Weather Conditions")
     st.pyplot(fig)  # Pass the figure object
 
-# Additional Analysis Section: Visualize Weather Impact
+# Additional Analysis Section: Visualize Weather Impact > ini semua visualisasi notebook dijadikan 1
 if additional_analysis_option:
-    st.header("📅 Additional Analysis of Weather and Holiday Impact")
+    st.header("📅 All notebook visualization")
     
     # Average bike rentals by temperature
     st.subheader("Average Bike Rentals by Temperature")
