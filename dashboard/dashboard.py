@@ -7,7 +7,6 @@ import os
 
 # Load data
 # Construct the file path
-
 current_directory = os.path.dirname(__file__)
 csv_file_path = os.path.join(current_directory, 'bike_sharing_cleaned.csv')
 
@@ -26,6 +25,7 @@ overview_option = st.sidebar.button("Overview")
 rfm_analysis_option = st.sidebar.button("RFM Analysis")
 weather_conditions_option = st.sidebar.button("Weather Conditions Impact")
 clustering_analysis_option = st.sidebar.button("Clustering Analysis")
+additional_analysis_option = st.sidebar.button("Additional Weather Impact")
 
 # Overview Section
 if overview_option:
@@ -105,6 +105,66 @@ if clustering_analysis_option:
     fig, ax = plt.subplots()
     sns.barplot(data=weather_grouping, x='temp_category', y='cnt', hue='hum_category', ax=ax, palette='crest')
     plt.title("Average Bike Rentals by Weather Conditions")
+    st.pyplot(fig)
+
+# Visualize sama seperti yang di notebook
+if additional_analysis_option:
+    st.header("📅 Additional Analysis of Weather and Holiday Impact")
+    
+    # Average bike rentals by temperature
+    st.subheader("Average Bike Rentals by Temperature")
+    fig, ax = plt.subplots()
+    weather_impact_temp['cnt'].plot(kind='bar', title="Average Bike Rentals by Temperature", ax=ax)
+    st.pyplot(fig)
+
+    # Average bike rentals by humidity
+    st.subheader("Average Bike Rentals by Humidity")
+    fig, ax = plt.subplots()
+    weather_impact_hum['cnt'].plot(kind='bar', title="Average Bike Rentals by Humidity", ax=ax)
+    st.pyplot(fig)
+
+    # Average bike rentals by windspeed
+    st.subheader("Average Bike Rentals by Windspeed")
+    fig, ax = plt.subplots()
+    weather_impact_wind['cnt'].plot(kind='bar', title="Average Bike Rentals by Windspeed", ax=ax)
+    st.pyplot(fig)
+
+    # Visualize weekday and working day pattern
+    st.subheader("Average Bike Rentals by Weekday and Working Day")
+    day_pattern['cnt'].unstack().plot(kind='bar', title="Average Bike Rentals by Weekday and Working Day")
+    st.pyplot()
+
+    # Visualize holiday effect
+    st.subheader("Average Bike Rentals on Holidays vs Non-Holidays")
+    holiday_effect['cnt'].plot(kind='bar', title="Average Bike Rentals on Holidays vs Non-Holidays")
+    st.pyplot()
+
+    # Visualize temperature and humidity cluster impact
+    st.subheader("Impact of Temperature and Humidity Clusters on Bike Rentals")
+    fig, ax = plt.subplots(figsize=(10, 6))
+    sns.barplot(x='temp_category', y='cnt', hue='hum_category', data=cluster_analysis, ax=ax)
+    plt.title('Average Bike Rentals Based on Temperature and Humidity Clusters')
+    st.pyplot(fig)
+
+    # Visualize bike rentals by month
+    st.subheader("Average Bike Rentals by Month")
+    fig, ax = plt.subplots(figsize=(10, 6))
+    sns.lineplot(x='month', y='cnt', data=monthly_rentals, marker='o', ax=ax)
+    plt.title("Average Bike Rentals by Month")
+    st.pyplot(fig)
+
+    # Visualize bike rentals by season
+    st.subheader("Average Bike Rentals by Season")
+    fig, ax = plt.subplots(figsize=(10, 6))
+    sns.barplot(x='season', y='cnt', data=seasonal_rentals, ax=ax)
+    plt.title("Average Bike Rentals by Season")
+    st.pyplot(fig)
+
+    # Visualize bike rentals by working day and weather condition
+    st.subheader("Average Bike Rentals by Weather Condition and Working Day")
+    fig, ax = plt.subplots(figsize=(10, 6))
+    sns.barplot(x='weathersit', y='cnt', hue='workingday', data=working_weather_rentals, ax=ax)
+    plt.title("Average Bike Rentals by Weather Condition and Working Day")
     st.pyplot(fig)
 
 # Final Note
