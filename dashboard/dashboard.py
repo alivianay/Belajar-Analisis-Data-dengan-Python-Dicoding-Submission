@@ -60,7 +60,7 @@ overview_option = st.sidebar.button("Overview")
 rfm_analysis_option = st.sidebar.button("RFM Analysis")
 weather_conditions_option = st.sidebar.button("Weather Conditions Impact")
 clustering_analysis_option = st.sidebar.button("Clustering Analysis")
-additional_analysis_option = st.sidebar.button("Additional Weather Impact")
+additional_analysis_option = st.sidebar.button("Visualisasi Notebook")
 
 # Overview Section
 if overview_option:
@@ -145,7 +145,7 @@ if clustering_analysis_option:
 
 # Additional Analysis Section: Visualize Weather Impact > ini semua visualisasi notebook dijadikan 1
 if additional_analysis_option:
-    st.header("📅 All notebook visualization")
+    st.header("📅 Additional Analysis of Weather and Holiday Impact")
     
     # Average bike rentals by temperature
     st.subheader("Average Bike Rentals by Temperature")
