@@ -15,6 +15,40 @@ if not os.path.exists(csv_file_path):
 else:
     df_day_cleaned = pd.read_csv(csv_file_path)
 
+#define varibale
+# Calculating average rentals by temperature, humidity, and windspeed categories
+weather_impact_temp = df_day_cleaned.groupby('temp_category').agg({'cnt': 'mean'})
+weather_impact_hum = df_day_cleaned.groupby('hum_category').agg({'cnt': 'mean'})
+weather_impact_wind = df_day_cleaned.groupby('windspeed_category').agg({'cnt': 'mean'})
+
+# Grouping by weekday and working day
+day_pattern = df_day_cleaned.groupby(['weekday', 'workingday']).agg({
+    'cnt': 'mean',
+    'temp': 'mean',
+    'hum': 'mean',
+    'windspeed': 'mean'
+})
+
+# Grouping by holidays
+holiday_effect = df_day_cleaned.groupby('holiday').agg({
+    'cnt': 'mean',
+    'temp': 'mean',
+    'hum': 'mean',
+    'windspeed': 'mean'
+})
+
+# Cluster analysis data
+cluster_analysis = df_day_cleaned.groupby(['temp_category', 'hum_category']).agg({'cnt': 'mean'}).reset_index()
+
+# Monthly rentals (assuming a 'month' column exists in the dataset)
+monthly_rentals = df_day_cleaned.groupby('month').agg({'cnt': 'mean'}).reset_index()
+
+# Seasonal rentals (assuming a 'season' column exists in the dataset)
+seasonal_rentals = df_day_cleaned.groupby('season').agg({'cnt': 'mean'}).reset_index()
+
+# Rentals by working day and weather condition
+working_weather_rentals = df_day_cleaned.groupby(['weathersit', 'workingday']).agg({'cnt': 'mean'}).reset_index()
+
 # Layout
 st.title("🚴‍♂️ Bike Sharing Analysis Dashboard")
 
@@ -98,16 +132,15 @@ if clustering_analysis_option:
 
     # Grouping by weather conditions
     st.subheader("Bike Rentals by Weather Conditions")
-    weather_grouping = df_day_cleaned.groupby(['temp_category', 'hum_category']).agg({'cnt': 'mean'}).reset_index()
-    st.write(weather_grouping)
+    st.write(cluster_analysis)
 
     # Visualization for Clustering Results
     fig, ax = plt.subplots()
-    sns.barplot(data=weather_grouping, x='temp_category', y='cnt', hue='hum_category', ax=ax, palette='crest')
+    sns.barplot(data=cluster_analysis, x='temp_category', y='cnt', hue='hum_category', ax=ax, palette='crest')
     plt.title("Average Bike Rentals by Weather Conditions")
     st.pyplot(fig)
 
-# Visualize sama seperti yang di notebook
+# Additional Analysis Section: Visualize Weather Impact
 if additional_analysis_option:
     st.header("📅 Additional Analysis of Weather and Holiday Impact")
     
