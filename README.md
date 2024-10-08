@@ -34,7 +34,7 @@ pipenv shell
 pipenv install -r requirements.txt
 ```
 
-### Run the ashboard
+### Run the dashboard
 ```bash
 cd dashboard
 streamlit run dashboard.py
