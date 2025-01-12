@@ -1,6 +1,8 @@
 
 # 🚴‍♂️ Bike Sharing Analysis Dashboard
 
+![This Dashboard project is rated 5 stars](https://raw.githubusercontent.com/alivianay/Belajar-Analisis-Data-dengan-Python-Dicoding-Submission/master/penilaian-submission/Screenshot%202025-01-12%20162323.png)
+
 ## 🛠️ Tools and Libraries
 The project uses the following libraries (as listed in the `requirements.txt` file):
 - **Streamlit**
